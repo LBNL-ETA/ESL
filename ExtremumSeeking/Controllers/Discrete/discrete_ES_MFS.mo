@@ -3,9 +3,11 @@ model discrete_ES_MFS
   extends Modelica.Blocks.Interfaces.DiscreteBlock;
 
   Modelica.Blocks.Interfaces.RealInput u "Connector of Real input signal"
-    annotation (Placement(transformation(extent={{-260,-20},{-220,20}})));
+    annotation (Placement(transformation(extent={{-260,-20},{-220,20}}), iconTransformation(extent={{-140,-20},
+            {-100,20}})));
   Modelica.Blocks.Interfaces.RealOutput y "Connector of Real output signal"
-    annotation (Placement(transformation(extent={{140,-10},{160,10}})));
+    annotation (Placement(transformation(extent={{140,-10},{160,10}}),  iconTransformation(extent={{100,-10},
+            {120,10}})));
   import Modelica.Constants.pi;
   parameter Modelica.SIunits.Frequency probe_frequency = 1 "Frequency of probe"
   annotation (Dialog(group="Basic settings"));

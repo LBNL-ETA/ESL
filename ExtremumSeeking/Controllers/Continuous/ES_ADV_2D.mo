@@ -62,15 +62,15 @@ model ES_ADV_2D
     min_control=min_control_1)
     annotation (Placement(transformation(extent={{0,30},{20,50}})));
 equation
-  connect(ES_1.u, u) annotation (Line(points={{-1.25,40},{-58,40},{-58,0},{-120,
+  connect(ES_1.u, u) annotation (Line(points={{3.75,40},{-58,40},{-58,0},{-120,
           0}}, color={0,0,127}));
-  connect(ES_2.u, u) annotation (Line(points={{-1.25,-40},{-58,-40},{-58,0},{
+  connect(ES_2.u, u) annotation (Line(points={{3.75,-40},{-58,-40},{-58,0},{
           -120,0}},
                color={0,0,127}));
   connect(ES_1.y, y)
-    annotation (Line(points={{20.625,40},{110,40}},  color={0,0,127}));
+    annotation (Line(points={{18.125,40},{110,40}},  color={0,0,127}));
   connect(ES_2.y, y1)
-    annotation (Line(points={{20.625,-40},{110,-40}},  color={0,0,127}));
+    annotation (Line(points={{18.125,-40},{110,-40}},  color={0,0,127}));
   annotation (Icon(coordinateSystem(preserveAspectRatio=false)), Diagram(
         coordinateSystem(preserveAspectRatio=false)));
 end ES_ADV_2D;

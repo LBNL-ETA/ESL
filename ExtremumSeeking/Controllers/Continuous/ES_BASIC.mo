@@ -79,6 +79,5 @@ equation
     annotation (Line(points={{11,0},{28,0}},  color={0,0,127}));
   connect(Integrator.y, Modulate.u1)
     annotation (Line(points={{51,0},{60,0},{60,6},{68,6}}, color={0,0,127}));
-  annotation (Diagram(coordinateSystem(extent={{-100,-100},{100,100}})), Icon(
-        coordinateSystem(extent={{-140,-100},{100,100}})));
+  annotation (Diagram(coordinateSystem(extent={{-100,-100},{100,100}})));
 end ES_BASIC;

@@ -3,9 +3,11 @@ block discrete_ES_SFS
   extends Modelica.Blocks.Interfaces.DiscreteBlock;
 
   Modelica.Blocks.Interfaces.RealInput u "Connector of Real input signal"
-    annotation (Placement(transformation(extent={{-220,-20},{-180,20}})));
+    annotation (Placement(transformation(extent={{-220,-20},{-180,20}}), iconTransformation(extent={{-140,-20},
+            {-100,20}})));
   Modelica.Blocks.Interfaces.RealOutput y "Connector of Real output signal"
-    annotation (Placement(transformation(extent={{160,-10},{180,10}})));
+    annotation (Placement(transformation(extent={{160,-10},{180,10}}),  iconTransformation(extent={{100,-10},
+            {120,10}})));
   import Modelica.Constants.pi;
 
 

@@ -65,10 +65,11 @@ model ES_ADV
         integrator_gain)
     annotation (Placement(transformation(extent={{50,-10},{70,10}})));
   Modelica.Blocks.Interfaces.RealInput u annotation (Placement(transformation(
-          rotation=0, extent={{-220,-20},{-180,20}})));
+          rotation=0, extent={{-220,-20},{-180,20}}), iconTransformation(extent={{-140,-20},
+            {-100,20}})));
   Modelica.Blocks.Interfaces.RealOutput y annotation (Placement(transformation(
-          rotation=0, extent={{140,-10},{160,10}}), iconTransformation(extent={{140,-10},
-            {160,10}})));
+          rotation=0, extent={{140,-10},{160,10}}),  iconTransformation(extent={{100,-10},
+            {120,10}})));
   Modelica.Blocks.Logical.Switch switch
     annotation (Placement(transformation(extent={{20,-10},{40,10}})));
   Modelica.Blocks.Sources.BooleanConstant AO_flag(k=averaging)
@@ -132,6 +133,5 @@ equation
             lineColor={28,108,200}), Text(
           extent={{-182,24},{-118,16}},
           lineColor={28,108,200},
-          textString="Bandpass Filter")}),                               Icon(
-        coordinateSystem(extent={{-180,-100},{140,100}})));
+          textString="Bandpass Filter")}));
 end ES_ADV;

@@ -3,9 +3,11 @@ block discrete_ES_ADV "Discrete implementation of ES with first order filters"
   extends Modelica.Blocks.Interfaces.DiscreteBlock;
 
   Modelica.Blocks.Interfaces.RealInput u "Connector of Real input signal"
-    annotation (Placement(transformation(extent={{-200,-20},{-160,20}})));
+    annotation (Placement(transformation(extent={{-200,-20},{-160,20}}), iconTransformation(extent={{-140,-20},
+            {-100,20}})));
   Modelica.Blocks.Interfaces.RealOutput y "Connector of Real output signal"
-    annotation (Placement(transformation(extent={{140,-10},{160,10}})));
+    annotation (Placement(transformation(extent={{140,-10},{160,10}}),  iconTransformation(extent={{100,-10},
+            {120,10}})));
   import Modelica.Constants.pi;
 
   parameter Real probe_peak_amplitude = 0.1 "Peak amplitude of Probe"
