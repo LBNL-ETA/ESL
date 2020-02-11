@@ -37,8 +37,8 @@ equation
     annotation (Line(points={{-32,10},{-32,-10}}, color={0,191,0}));
   connect(damper.flange_b, fixed.flange)
     annotation (Line(points={{-12,10},{18,10}}, color={0,127,0}));
-  connect(eS_BASIC.y, force.f) annotation (Line(points={{70.8333,36},{84,36},{
-          84,72},{-72,72},{-72,-14},{-66,-14}}, color={0,0,127}));
+  connect(eS_BASIC.y, force.f) annotation (Line(points={{71,36},{84,36},{84,72},
+          {-72,72},{-72,-14},{-66,-14}},        color={0,0,127}));
   connect(positionSensor.flange, mass.flange_b)
     annotation (Line(points={{-32,30},{-44,30},{-44,10}}, color={0,127,0}));
   connect(positionSensor.s, quadratic_objective_function.u) annotation (Line(
@@ -46,7 +46,7 @@ equation
   connect(Target.y, quadratic_objective_function.Target) annotation (Line(
         points={{-11,54},{-2,54},{-2,40},{16,40}}, color={0,0,127}));
   connect(quadratic_objective_function.y, eS_BASIC.u)
-    annotation (Line(points={{40,36},{51.6667,36}}, color={0,0,127}));
+    annotation (Line(points={{40,36},{48,36}},      color={0,0,127}));
   connect(force.flange, mass.flange_b)
     annotation (Line(points={{-44,-14},{-44,10}}, color={0,127,0}));
   annotation (Documentation(info="<html>
