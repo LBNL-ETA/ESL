@@ -46,7 +46,7 @@ equation
         points={{36,-34},{42,-34},{42,-46},{-26,-46},{-26,-34},{-20,-34}},
         color={0,0,127}));
   connect(quadratic_objective_function1.Target, OptimalValue.y) annotation (
-      Line(points={{12,-30},{8,-30},{8,-18},{-28,-18},{-28,16},{-35,16}}, color
-        ={0,0,127}));
+      Line(points={{12,-30},{8,-30},{8,-18},{-28,-18},{-28,16},{-35,16}}, color=
+         {0,0,127}));
   annotation (experiment(StopTime=100));
 end Combination_different_controller_types;
