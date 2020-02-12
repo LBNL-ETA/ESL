@@ -1,7 +1,7 @@
 within ExtremumSeeking.Examples;
 model ParallelOptimizationOf3DifferentControlerTypes
   Controllers.Discrete.discrete_ES_ADV                   discrete_ES_ADV(
-    samplePeriod=0.1,
+    samplePeriod=0.01,
     integrator_gain=0.05,
     max_control=2,
     min_control=-1)
@@ -22,15 +22,17 @@ model ParallelOptimizationOf3DifferentControlerTypes
   Modelica.Blocks.Sources.Constant OptimalValue3(k=3)
     annotation (Placement(transformation(extent={{-60,-16},{-40,4}})));
   ExtremumSeeking.Controllers.Discrete.discrete_ES_SFS discrete_ES_SFS(
-    samplePeriod=0.1,
+    samplePeriod=0.01,
       probe_frequency=1.1,
-    T_update=2,            discreteLimIntegrator(zeroOrderHold(ySample(start=1))))
+    T_update=2,
+    n_samples=200,         discreteLimIntegrator(zeroOrderHold(ySample(start=1))))
     annotation (Placement(transformation(extent={{8,8},{-26,24}})));
   ExtremumSeeking.Controllers.Discrete.discrete_ES_MFS discrete_ES_MFS(
-    samplePeriod=0.1,
+    samplePeriod=0.01,
       probe_frequency=1.2,
+    control_gain=0.5,
     T_update=5,
-    n_samples=50,          discreteLimIntegrator(zeroOrderHold(ySample(start=2))))
+    n_samples=500,         discreteLimIntegrator(zeroOrderHold(ySample(start=2))))
     annotation (Placement(transformation(extent={{12,-40},{-24,-24}})));
   Modelica.Blocks.Math.Add3 add3
     annotation (Placement(transformation(extent={{18,32},{38,52}})));
