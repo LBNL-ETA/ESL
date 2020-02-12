@@ -94,8 +94,8 @@ equation
                                                  color={0,0,0}));
   connect(speedSensor_ES_MFS.flange, mass.flange_a)
     annotation (Line(points={{20,12},{24,12},{24,-12}}, color={0,127,0}));
-  connect(Target_ES_MFS.y, quad_obj_func_ES_MFS.Target) annotation (Line(points
-        ={{-1,34},{-8,34},{-8,16},{-14,16}}, color={0,0,127}));
+  connect(Target_ES_MFS.y, quad_obj_func_ES_MFS.Target) annotation (Line(points=
+         {{-1,34},{-8,34},{-8,16},{-14,16}}, color={0,0,127}));
   connect(speedSensor_ES_MFS.v, quad_obj_func_ES_MFS.u)
     annotation (Line(points={{-1,12},{-14,12}}, color={0,0,127}));
   connect(inertia1.flange_b, idealRollingWheel1.flangeR)
@@ -108,8 +108,8 @@ equation
     annotation (Line(points={{-46,-92},{-38,-92}}, color={0,0,0}));
   connect(speedSensor_ES_SFS.flange, mass1.flange_a)
     annotation (Line(points={{20,-68},{22,-68},{22,-92}}, color={0,127,0}));
-  connect(Target_ES_SFS.y, quad_obj_func_ES_SFS.Target) annotation (Line(points
-        ={{-1,-46},{-8,-46},{-8,-64},{-14,-64}}, color={0,0,127}));
+  connect(Target_ES_SFS.y, quad_obj_func_ES_SFS.Target) annotation (Line(points=
+         {{-1,-46},{-8,-46},{-8,-64},{-14,-64}}, color={0,0,127}));
   connect(speedSensor_ES_SFS.v, quad_obj_func_ES_SFS.u)
     annotation (Line(points={{-1,-68},{-14,-68}}, color={0,0,127}));
   connect(inertia2.flange_b,idealRollingWheel2. flangeR)
