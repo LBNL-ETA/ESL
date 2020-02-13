@@ -10,7 +10,7 @@ model Combination_different_controller_types
   Objective_functions.Quadratic_objective_function
     quadratic_objective_function4
     annotation (Placement(transformation(extent={{14,24},{34,44}})));
-  Controllers.Continuous.ES_ADV   eS_ADV
+  Controllers.Continuous.ES_ADV ES
     annotation (Placement(transformation(extent={{-18,24},{2,44}})));
   Controllers.Discrete.discrete_ES_SFS discrete_ES_SFS(
     samplePeriod=0.1,
@@ -25,17 +25,17 @@ model Combination_different_controller_types
     n_samples=50,
      discreteLimIntegrator(zeroOrderHold(ySample(start=2))))
     annotation (Placement(transformation(extent={{-30,-42},{6,-26}})));
-  Modelica.Blocks.Sources.Constant OptimalValue_ES_CONT(k=1)
+  Modelica.Blocks.Sources.Constant Target_ES_CONT(k=1)
     annotation (Placement(transformation(extent={{-56,24},{-36,44}})));
-  Modelica.Blocks.Sources.Constant OptimalValue_ES_SFS(k=2)
+  Modelica.Blocks.Sources.Constant Target_ES_SFS(k=2)
     annotation (Placement(transformation(extent={{-56,-10},{-36,10}})));
-  Modelica.Blocks.Sources.Constant OptimalValue_ES_MFS(k=3)
+  Modelica.Blocks.Sources.Constant Target_ES_MFS(k=3)
     annotation (Placement(transformation(extent={{-56,-44},{-36,-24}})));
 equation
-  connect(eS_ADV.y, quadratic_objective_function4.u)
+  connect(ES.y, quadratic_objective_function4.u)
     annotation (Line(points={{3,34},{12,34}}, color={0,0,127}));
-  connect(quadratic_objective_function4.y, eS_ADV.u) annotation (Line(points={{
-          36,34},{40,34},{40,22},{-24,22},{-24,34},{-20,34}}, color={0,0,127}));
+  connect(quadratic_objective_function4.y, ES.u) annotation (Line(points={{36,
+          34},{40,34},{40,22},{-24,22},{-24,34},{-20,34}}, color={0,0,127}));
   connect(discrete_ES_SFS.y, quadratic_objective_function3.u)
     annotation (Line(points={{3,0},{12,0}}, color={0,0,127}));
   connect(quadratic_objective_function3.y, discrete_ES_SFS.u) annotation (Line(
@@ -46,14 +46,14 @@ equation
   connect(quadratic_objective_function1.y, discrete_ES_MFS.u) annotation (Line(
         points={{36,-34},{40,-34},{40,-46},{-24,-46},{-24,-34},{-20,-34}},
         color={0,0,127}));
-  connect(OptimalValue_ES_SFS.y, quadratic_objective_function3.Target)
-    annotation (Line(points={{-35,0},{-28,0},{-28,18},{8,18},{8,4},{12,4}},
-        color={0,0,127}));
-  connect(OptimalValue_ES_CONT.y, quadratic_objective_function4.Target)
-    annotation (Line(points={{-35,34},{-28,34},{-28,46},{6,46},{6,38},{12,38}},
-        color={0,0,127}));
-  connect(OptimalValue_ES_MFS.y, quadratic_objective_function1.Target)
-    annotation (Line(points={{-35,-34},{-28,-34},{-28,-18},{6,-18},{6,-30},{12,-30}},
+  connect(Target_ES_SFS.y, quadratic_objective_function3.Target) annotation (
+      Line(points={{-35,0},{-28,0},{-28,18},{8,18},{8,4},{12,4}}, color={0,0,
+          127}));
+  connect(Target_ES_CONT.y, quadratic_objective_function4.Target) annotation (
+      Line(points={{-35,34},{-28,34},{-28,46},{6,46},{6,38},{12,38}}, color={0,
+          0,127}));
+  connect(Target_ES_MFS.y, quadratic_objective_function1.Target) annotation (
+      Line(points={{-35,-34},{-28,-34},{-28,-18},{6,-18},{6,-30},{12,-30}},
         color={0,0,127}));
   annotation (experiment(StopTime=60));
 end Combination_different_controller_types;

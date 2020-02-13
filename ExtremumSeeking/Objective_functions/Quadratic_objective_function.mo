@@ -22,4 +22,22 @@ equation
     annotation (Line(points={{21,6},{64,6},{64,0},{120,0}}, color={0,0,127}));
   connect(Add1.u1, Target) annotation (Line(points={{-34,12},{-60,12},{-60,40},{
           -120,40}}, color={0,0,127}));
+  connect(y, y) annotation (Line(points={{120,0},{110,0},{110,0},{120,0}},
+        color={0,0,127}));
+  annotation (Icon(graphics={
+        Rectangle(
+          extent={{-100,100},{100,-100}},
+          lineColor={0,0,0},
+          fillColor={255,255,255},
+          fillPattern=FillPattern.Solid),
+        Text(
+          extent={{-100,40},{100,-40}},
+          lineColor={28,108,200},
+          textString="  (u-target)    "),
+        Text(
+          extent={{-100,40},{100,0}},
+          lineColor={28,108,200},
+          fillColor={255,255,255},
+          fillPattern=FillPattern.Solid,
+          textString="                2")}));
 end Quadratic_objective_function;
