@@ -56,19 +56,19 @@ model RollingWheel "Demonstrate coupling Rotational - Translational"
     ForceDirection=false,
     v_nominal=5)
     annotation (Placement(transformation(extent={{76,54},{56,74}})));
-  Modelica.Blocks.Sources.Constant Target_ES_BASIC(k=1)
+  Modelica.Blocks.Sources.Constant Target_ES(k=1)
     annotation (Placement(transformation(extent={{20,100},{0,120}})));
   Modelica.Mechanics.Rotational.Sources.Torque torque2
     annotation (Placement(transformation(extent={{-64,54},{-44,74}})));
-  Controllers.Continuous.ES_BASIC CESC(
+  Controllers.Continuous.ES_BASIC ES(
     probe_peak_amplitude=0.05,
     probe_frequency=0.05,
     delay_compensation=0,
     integrator_gain=0.005)
     annotation (Placement(transformation(extent={{-46,78},{-66,98}})));
-  Modelica.Mechanics.Translational.Sensors.SpeedSensor speedSensor_ES_BASIC
+  Modelica.Mechanics.Translational.Sensors.SpeedSensor speedSensor_ES
     annotation (Placement(transformation(extent={{20,78},{0,98}})));
-  ExtremumSeeking.Objective_functions.Quadratic_objective_function quad_obj_func_ES_BASIC
+  ExtremumSeeking.Objective_functions.Quadratic_objective_function quad_obj_func_ES
     annotation (Placement(transformation(extent={{-16,78},{-36,98}})));
   Controllers.Discrete.discrete_ES_MFS discrete_ES_MFS(probe_frequency=0.05,
       control_gain=0.2)
@@ -120,15 +120,15 @@ equation
     annotation (Line(points={{56,64},{44,64}},   color={0,127,0}));
   connect(torque2.flange,inertia2. flange_a)
     annotation (Line(points={{-44,64},{-36,64}},   color={0,0,0}));
-  connect(CESC.y, torque2.tau) annotation (Line(points={{-67,88},{-76,88},{-76,
-          64},{-66,64}}, color={0,0,127}));
-  connect(speedSensor_ES_BASIC.flange, mass2.flange_a)
+  connect(ES.y, torque2.tau) annotation (Line(points={{-67,88},{-76,88},{-76,64},
+          {-66,64}}, color={0,0,127}));
+  connect(speedSensor_ES.flange, mass2.flange_a)
     annotation (Line(points={{20,88},{24,88},{24,64}}, color={0,127,0}));
-  connect(Target_ES_BASIC.y, quad_obj_func_ES_BASIC.Target) annotation (Line(
-        points={{-1,110},{-8,110},{-8,92},{-14,92}}, color={0,0,127}));
-  connect(speedSensor_ES_BASIC.v, quad_obj_func_ES_BASIC.u)
+  connect(Target_ES.y, quad_obj_func_ES.Target) annotation (Line(points={{-1,
+          110},{-8,110},{-8,92},{-14,92}}, color={0,0,127}));
+  connect(speedSensor_ES.v, quad_obj_func_ES.u)
     annotation (Line(points={{-1,88},{-14,88}}, color={0,0,127}));
-  connect(quad_obj_func_ES_BASIC.y, CESC.u)
+  connect(quad_obj_func_ES.y, ES.u)
     annotation (Line(points={{-38,88},{-44,88}}, color={0,0,127}));
   connect(quad_obj_func_ES_MFS.y, discrete_ES_MFS.u)
     annotation (Line(points={{-38,12},{-46,12}}, color={0,0,127}));
