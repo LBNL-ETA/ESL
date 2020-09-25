@@ -1,7 +1,7 @@
 # Extremum Seeking Library (ESL)
 
 ## Copyright and License Information
-The softare is distributed under a modified BSD license, see `LICENSE.md` for further information.
+The software is distributed under a modified BSD license, see `LICENSE.md` for further information.
 
 Extremum Seeking Library (ESL) Copyright (c) 2019, 
 The Regents of the University of California, through Lawrence Berkeley National
