@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: grid_reliability
+  labels:
+    app: grid_reliability
+  namespace: gridreliability
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: grid_reliability
+  template:
+    metadata:
+      labels:
+        app: grid_reliability
+    spec:
+      containers:
+        - name: grid_reliability
+          image: acrworkflow1685744253049.azurecr.io/image-workflow-1685744253049:latest
+          ports:
+            - containerPort: 8000
